@@ -1,7 +1,7 @@
 <?php
 /**
-* Plugin Name: Exclude Gif from being converted as WebP.  
-* Description: This plugin is meant to exclude the Gif from being converted as WebP.
+* Plugin Name: Imagify - Exclude Gif from being converted to WebP.  
+* Description: This plugin is meant to exclude the Gif from being converted to WebP.
 * Plugin URI:  https://github.com/daniellopezvalencia91/Imagify-test
 * Version: 0.0.1
 * Author: Daniel López Valencia
@@ -17,7 +17,7 @@ function no_webp_for_gif( $response, $process, $file, $thumb_size, $optimization
     return $response;
   }
 
-  // Check if the file is not a Gif, if nota a Gif just return the value $response without changes.
+  // Check if the file is not a Gif, if not a Gif just return the value $response without changes.
   if ( 'image/gif' !== $file->get_mime_type() ) {
     return $response;
   }
