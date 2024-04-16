@@ -12,17 +12,17 @@ defined( 'ABSPATH' ) or die();
 
 function no_webp_for_gif( $response, $process, $file, $thumb_size, $optimization_level, $webp, $is_disabled ) {
 
-  // Check if the WebP is not possible or if it is disabled, or if there ins an error, if one or more condicionts are true it returns the value $response without changes.
+  // Check if the WebP is not possible or if it is disabled, or if there is an error, if one or more conditions are true it returns the value $response without changes.
   if ( ! $webp || $is_disabled || is_wp_error( $response ) ) {
     return $response;
   }
 
-  // Check if the file is not a Gif, if not a Gif just return the value $response without changes.
+  // Check if the file is not a Gif, if it's not a Gif just return the value $response without changes.
   if ( 'image/gif' !== $file->get_mime_type() ) {
     return $response;
   }
 
-  // If none of the previous conditions were meet, it will return error to prevent WebP conversion
+  // If none of the previous conditions were met, it will return error to prevent WebP conversion
   return new \WP_Error( 'no_webp_for_gif', __( 'Webp version of gif is disabled by filter.' ) );
 }
 
