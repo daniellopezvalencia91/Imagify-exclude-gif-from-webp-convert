@@ -6,7 +6,6 @@
 * Version: 0.0.1
 * Author: Daniel López Valencia
 */
-//namespace ImagifyPlugin\Helpers\exclude_gif_webp;
 
 defined( 'ABSPATH' ) or die();
 
