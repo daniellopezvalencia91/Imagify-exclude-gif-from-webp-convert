@@ -7,6 +7,8 @@
 * Author: Daniel López Valencia
 */
 
+namespace ImagifyPlugin\Helpers\optimization\skip_gif_webp_convertion;
+
 defined( 'ABSPATH' ) or die();
 
 function no_webp_for_gif( $response, $process, $file, $thumb_size, $optimization_level, $webp, $is_disabled ) {
@@ -20,4 +22,4 @@ function no_webp_for_gif( $response, $process, $file, $thumb_size, $optimization
 
 	return new \WP_Error( 'no_webp_for_gif', __( 'Webp version of gif is disabled by filter.' ) );
 }
-add_filter( 'imagify_before_optimize_size', 'no_webp_for_gif', 10, 7 );
+add_filter( 'imagify_before_optimize_size', __NAMESPACE__ . '\no_webp_for_gif', 10, 7 );
